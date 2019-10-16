@@ -15,5 +15,6 @@ int main() {
     // Process
     scanf("%d", &masuk);
     printf("%d\n", masuk*2);
-    
+
+    return 0;
 }
