@@ -10,12 +10,12 @@ Pertanyaan      : Buatlah sebuah program untuk mengubah suatu kalimat ke dalam b
 
 int main() {
     //Declaration
-    char masuk[50];
+    char masuk[51];
     int i;
 
     //Process
     scanf("%[^\n]s", &masuk);
-    for (i = 0; i < sizeof(masuk)/sizeof(masuk[0]); i++)
+    for (i = 0; i <= sizeof(masuk)/sizeof(masuk[0]); i++)
     {
         switch (masuk[i])
         {
