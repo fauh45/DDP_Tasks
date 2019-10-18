@@ -16,7 +16,7 @@ Malam Minggu ini Ima sedang kesepian, dan ia mengajakmu sebagai â€œadik angkatâ€
 
 int main() {
     //Declaration
-    int jenis, waktu, total;
+    int jenis, waktu, total= 0;
 
     //Process
     scanf("%d\n%d", &jenis, &waktu);
