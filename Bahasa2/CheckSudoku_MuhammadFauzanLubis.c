@@ -10,39 +10,21 @@ Pertanyaan      : Buatlah program untuk memeriksa apakah sebuah blok yang ada di
 
 int main() {
     //Declaration
-    int matriks1[4][4], angka[9], i, n, benar = 0;
+    int matriks1[4][4], i, n, benar = 0;
 
     //Process
     for (i = 0; i < 3; i++)
     {
         for (n = 0; n < 3; n++)
         {
-            scanf("%d", &matriks1[i][n], &angka[i + n]);
-            
-        }
-    }
-
-    for (i = 0; i < 9; i++)
-    {
-        for (n = 0; n < 16; n++)
-        {
-            if (angka[i] == angka[n])
-            {
-                benar = 0;
-                break;
-            }
-            else
-            {
-                benar = 1;
-            }
-            
+            scanf("%d", &matriks1[i][n]);
             
         }
     }
 
     for (i = 0; i < 3; i++)
     {
-        if (matriks1[i][0] != matriks1[i][1] != matriks1[i][2])
+        if (matriks1[i][0] != matriks1[i][1] && matriks1[i][0] != matriks1[i][2] && matriks1[i][1] != matriks1[i][2])
         {
             benar = 1;
         }
@@ -52,7 +34,7 @@ int main() {
             break;
         }
         
-        if (matriks1[0][i] != matriks1[1][i] != matriks1[2][i])
+        if (matriks1[0][i] != matriks1[i][1] && matriks1[0][i] != matriks1[2][i] && matriks1[1][i] != matriks1[2][i])
         {
             benar = 1;
         }
