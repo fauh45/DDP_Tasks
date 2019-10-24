@@ -19,7 +19,8 @@ Huruf besar dan huruf kecil dianggap sama.
 #include <ctype.h>
 #include <string.h>
 
-int main() {
+int main()
+{
     //Declaration
     char input[31];
     int i, n, lon, prt;
@@ -31,7 +32,7 @@ int main() {
     {
         lon = (toupper(input[i]) - 64) % 3;
         prt = (toupper(input[i]) - 64) / 3;
-        
+
         if (lon == 0)
         {
             lon = 3;
@@ -44,18 +45,34 @@ int main() {
             {
                 printf("-1 ");
             }
-            
         }
 
         if (input[i] == ' ')
         {
             printf("0 ");
         }
-        
-        
-        for (n = 0; n < lon; n++)
+
+        if (i == strlen(input) - 1)
         {
-            printf("%d ", prt + 1);
+            for (n = 0; n < lon; n++)
+            {
+                if (n == lon - 1)
+                {
+                    printf("%d", prt + 1);
+                }
+                else
+                {
+                    printf("%d ", prt + 1);
+                }
+                
+            }
+        }
+        else
+        {
+            for (n = 0; n < lon; n++)
+            {
+                printf("%d ", prt + 1);
+            }
         }
     }
     printf("\n");
