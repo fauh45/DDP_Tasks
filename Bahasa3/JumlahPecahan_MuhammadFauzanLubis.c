@@ -8,34 +8,47 @@ Pertanyaan      : Buatlah program untuk menghitung penjumlahan dari A/Bdan C/D d
 ======================================*/
 #include <stdio.h>
 
-int fpb(int a, int b) {
-    int i, gcd;
-    for (i = 1; i <= a && i <= b; i++)
-    {
-        if (a % i == 0 && b % i == 0)
-        {
-            gcd = i;
-        }
+// int fpb(int a, int b) {
+//     int i, gcd;
+//     for (i = 1; i <= a && i <= b; i++)
+//     {
+//         if (a % i == 0 && b % i == 0)
+//         {
+//             gcd = i;
+//         }
         
+//     }
+
+//     return gcd;
+// }
+int fpb(int a, int b) {
+    if (a == 0)
+    {
+        return b;
     }
 
-    return gcd;
+    return fpb(b % a, a);
 }
 
 int main() {
     //Declaration
-    int a, b, c, d, e, f, temp;
+    int a, b, c, d, e, f, temp, lcm;
 
     //Process
     scanf("%d %d %d %d", &a, &b, &c, &d);
 
-    e = (a * d) + (b * c);
-    f = b * d;
-
+    f = (b * d) / fpb(b, d);
+    e = (f / b) * a + (f / d) * c;
+    
     temp = fpb(e, f);
-    e = e / temp;
-    f = f / temp;
 
+    while (temp != 1)
+    {
+        e = e / temp;
+        f = f / temp;
+        temp = fpb(e, f);
+    }
+    
     printf("%d %d\n", e, f);
     return 0;
 }
