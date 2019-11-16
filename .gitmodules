@@ -1,0 +1,3 @@
+[submodule "Ludo"]
+	path = Ludo
+	url = https://github.com/fauh45/Ludo
